@@ -11,22 +11,6 @@ var app = new Vue({
       let originalMessage = htmlEntities(this.messageTextarea);
 
       return whatsappStyles(originalMessage);
-
-      // Old incomplete solution. Works, but takes so long for some strings.
-      /*
-      let bold = /\b\*((<(s|b|i|code)>)?((\w+\s?)+(\S))(<\/(\3)>)?)\*\b/g;
-      let italic = /\b_((<(s|b|i|code)>)?((\w+\s?)+(\S))(<\/(\3)>)?)_\b/g;
-      let strikethrough = /\b~((<(s|b|i|code)>)?((\w+\s?)+(\S))(<\/(\3)>)?)~\b/g;
-
-      let newLine = /\n/gm;
-
-      let parsedMessage = originalMessage
-        .replace(bold,`<b>$1</b>`)
-        .replace(italic,`<i>$1</i>`)
-        .replace(strikethrough,`<s>$1</s>`)
-        .replace(newLine,`<br>`);
-      return parsedMessage;
-      */
     },
     phoneNumbers(){
       let prefix = Number.isInteger(parseInt(this.prefix)) ? this.prefix : "";
@@ -69,10 +53,6 @@ var app = new Vue({
   }
 })
 
-/*
- * Thanks @sankalp179! 
- * https://github.com/sankalp179/whatsapp-formatter
-*/
 function whatsappStyles(message){
   var format = message;
   format = whatsappStyle(format,'_', '<i>', '</i>');
@@ -111,9 +91,6 @@ function whatsappStyles(message){
   }
 }
 
-/*
- * Taken from https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/
-*/
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
