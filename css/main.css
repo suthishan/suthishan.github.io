@@ -11,7 +11,32 @@
 	text-align: center;
 	font-size: 50px;
 }
-
+.about__content-title {
+	font-weight: 700;
+	font-size: 2rem;
+	margin-bottom: 3rem;
+  }
+  .skillCards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  }
+  .skills__skill {
+	text-align: center;
+	padding: 1rem 1.5rem 0.5rem 1.5rem;
+	margin-bottom: 1rem;
+	margin-right: 1.5rem;
+	font-size: 1rem;
+	background: rgba(153, 153, 153, 0.2);
+	border-radius: 5px;
+	font-weight: 600;
+	color: #666;
+	transition: transform 0.3s;
+  }
+  .skillCards div img {
+	height: 30px;
+	width: 30px;
+  }
 .img{
 	height: 25px;
 	width: 25px;
